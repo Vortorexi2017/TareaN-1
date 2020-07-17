@@ -21,6 +21,7 @@ h1{
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    border-radius: 3%;
 }
 
 p {
@@ -46,4 +47,18 @@ button:hover {
 }
 body {
     background-color: thistle;
+}
+
+footer{
+    background-color: crimson;
+    border: solid 3px black;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h2 {
+    font-size: 22;
+    color: blanchedalmond;
+    padding: 10px;
+    text-align: center;
 }
