@@ -172,3 +172,70 @@ document.querySelector('#resetear3').onclick = function(event) {
     inputSalarioHora.className = "oculto";
   }
 
+
+  // Validar c/ formulario creado.
+
+  function validarFormulario1(event){
+
+    const $form1 = document.querySelector('#formulario1');
+
+    const anioActual = $form1['anio-actual'].value;
+    const anioNacimiento = $form1['anio-nacimiento'].value;
+
+    //console.log(anioActual,anioNacimiento);
+
+    const errorAnioActual = validarAnioActual(anioActual);
+    const errorAnioNacimiento = validarAnioNacimiento(anioNacimiento);
+
+    const errores1 = {
+                anioActual : errorAnioActual,
+                anioNacimiento : errorAnioNacimiento,
+    }
+
+    manejarErrores1(errores1);
+    
+    event.preventDefault();
+  }
+   
+  function manejarErrores1(errores1){
+
+    errorAnioActual = errores1.anioActual;
+    errorAnioNacimiento = errores1.anioNacimiento;
+
+    if (errorAnioActual){
+      $form1['anio-actual'].className = "error";
+    }else{
+      $form1['anio-actual'].className = " ";
+    }
+
+    if (errorAnioNacimiento){
+      $form1['anio-nacimiento'].className = "error";
+    }else{
+      $form1['anio-nacimiento'].className = " ";
+    }
+
+    const $form1 = document.querySelector('#formulario1');
+    $form1.onsubmit = validarFormulario1;
+
+  }
+
+
+  function validarAnioActual(anioActual){
+    if (anioActual<=0){
+      return "Año Actual debe ser mayor que cero"
+
+    }
+    if (anioActual > 2020){
+      return "Año Actual debe ser menor a 2020"
+    }
+  }
+
+  function validarAnioNacimiento(anioNacimiento){
+    if (anioNacimiento<=0){
+      return "Año Actual debe ser mayor que cero"
+
+    }
+    if (anioNacimiento > 2020){
+      return "Año Actual debe ser menor a 2020"
+    }
+  }

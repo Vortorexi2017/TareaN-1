@@ -11,14 +11,14 @@
     </div>
     <br><br>
     <div class="container">
-        <form class="formulario">
+        <form class="formulario" id="formulario1">
             <label id="etiqueta-anio-actual" ><p>Año actual</p></label>
             <input type="text" id="anio-actual">
             <label id="etiqueta-anio-nacimiento"><p>Año de nacimiento</p></label>
             <input type="text" id="anio-nacimiento">
             <br><br>
 
-            <button id="calcular">Calcular</button>
+            <button type="submit" id="calcular">Calcular</button>
             <button type="reset" id="resetear">Resetear</button>
             <br>
             <label id="etiqueta-edad" class="oculto"><p>Edad</p></label>
@@ -27,26 +27,27 @@
         </form>
     </div>
     <div class="container">
-        <label for=""><p>Salario Anual</p></label>
-        <input type="text" id="salario-anual">
-        <br><br>
+        <form id="formulario2">
+            <label for=""><p>Salario Anual</p></label>
+            <input type="text" id="salario-anual">
+            <br><br>
 
-        <button id="calcular2">Calcular</button>
-        <button type="reset" id="resetear2">Resetear</button>
-        <br><br>
+            <button type="submit" id="calcular2">Calcular</button>
+            <button type="reset" id="resetear2">Resetear</button>
+            <br><br>
 
-        <label class="oculto" id="etiqueta-salario-anual"><p>Salario Mensual</p></label>
-        <input type="text" class="oculto" id="input-salario-anual" disabled >
-
+            <label class="oculto" id="etiqueta-salario-anual"><p>Salario Mensual</p></label>
+            <input type="text" class="oculto" id="input-salario-anual" disabled >
+        </form>
     </div>
 
     <div class="container">
-        <form action="">
+        <form id="formulario3">
             <label for=""><p>Salario Mensual</p></label>
             <input type="text" id="salario-mensual">
             <br><br>
     
-            <button id="calcular3">Calcular</button>
+            <button type="submit" id="calcular3">Calcular</button>
             <button type="reset" id="resetear3">Resetear</button>
             <br><br>
     

@@ -62,3 +62,7 @@ h2 {
     padding: 10px;
     text-align: center;
 }
+
+.error {
+    border: red 2px solid;
+}
