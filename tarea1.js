@@ -207,27 +207,6 @@ document.querySelector('#resetear3').onclick = function(event) {
 
   }
    
-  function manejarErrores1(errores1){
-
-    errorAnioActual = errores1.anioActual;
-    errorAnioNacimiento = errores1.anioNacimiento;
-
-    if (errorAnioActual){
-      $form1['anio-actual'].className = "error";
-    }else{
-      $form1['anio-actual'].className = " ";
-    }
-
-    if (errorAnioNacimiento){
-      $form1['anio-nacimiento'].className = "error";
-    }else{
-      $form1['anio-nacimiento'].className = " ";
-    }
-
-    //const $form1 = document.querySelector('#formulario1');
-    //$form1.onsubmit = validarFormulario1;
-
-  }
 
 
   function validarAnioActual(anioActual){
@@ -239,7 +218,7 @@ document.querySelector('#resetear3').onclick = function(event) {
     if (anioActual > 2020){
       return "Año Actual debe ser menor a 2020";
     };
-  }
+  };
 
   function validarAnioNacimiento(anioNacimiento){
     if (anioNacimiento<=0){
@@ -252,5 +231,25 @@ document.querySelector('#resetear3').onclick = function(event) {
   };
 
 
-  const $form1 = document.querySelector('#formulario1');
-  $form1.onsubmit = validarFormulario1;
+
+  function manejarErrores1(errores1){
+
+    errorAnioActual = errores1.anioActual;
+    errorAnioNacimiento = errores1.anioNacimiento;
+
+    if (errorAnioActual){
+      $form1['anio-actual'].className = "error";
+    }else{
+      $form1['anio-actual'].className = " ";
+    };
+
+    if (errorAnioNacimiento){
+      $form1['anio-nacimiento'].className = "error";
+    }else{
+      $form1['anio-nacimiento'].className = " ";
+    };
+
+   const $form1 = document.querySelector('#formulario1');
+   $form1.onsubmit = validarFormulario1;
+
+  }
