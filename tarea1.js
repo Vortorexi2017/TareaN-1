@@ -39,9 +39,13 @@ document.querySelector('#resetear').onclick = function(event) {
   function ocultarEdad(){
     let etiquetaEdad = document.querySelector('#etiqueta-edad');
     let inputEdad = document.querySelector('#input-edad');
+    const $anioActual = document.querySelector('#anio-actual');
+    const $anioNacimiento = document.querySelector('#anio-nacimiento');
 
-    etiquetaEdad.className = "oculto ";
+    etiquetaEdad.className = "oculto";
     inputEdad.className = "oculto";
+    $anioActual.value = ' ';
+    $anioNacimiento.value = ' ';
   }
 
   // Programar conducta del boton Calcular2.
@@ -84,9 +88,11 @@ document.querySelector('#resetear2').onclick = function(event) {
   function ocultarSalario(){
     let etiquetaEdad = document.querySelector('#etiqueta-salario-anual');
     let inputEdad = document.querySelector('#input-salario-anual');
+    const $salarioAnual = document.querySelector('#salario-anual');
 
     etiquetaEdad.className = "oculto ";
     inputEdad.className = "oculto";
+    $salarioAnual.value = " ";
   }
 
     // Programar conducta del boton Calcular3.
@@ -160,6 +166,8 @@ document.querySelector('#resetear3').onclick = function(event) {
     let etiquetaSalarioHora = document.querySelector('#etiqueta-salario-hora');
     let inputSalarioHora = document.querySelector('#input-salario-hora');
 
+    const $salarioMensual = document.querySelector('#salario-mensual');
+
 
 
     etiquetaSalarioAnual2.className = "oculto";
@@ -170,6 +178,8 @@ document.querySelector('#resetear3').onclick = function(event) {
 
     etiquetaSalarioHora.className = "oculto";
     inputSalarioHora.className = "oculto";
+
+    $salarioMensual.value =" ";
   }
 
 
@@ -182,7 +192,6 @@ document.querySelector('#resetear3').onclick = function(event) {
     const anioActual = $form1['anio-actual'].value;
     const anioNacimiento = $form1['anio-nacimiento'].value;
 
-    //console.log(anioActual,anioNacimiento);
 
     const errorAnioActual = validarAnioActual(anioActual);
     const errorAnioNacimiento = validarAnioNacimiento(anioNacimiento);
@@ -195,6 +204,7 @@ document.querySelector('#resetear3').onclick = function(event) {
     manejarErrores1(errores1);
     
     event.preventDefault();
+
   }
    
   function manejarErrores1(errores1){
@@ -214,28 +224,33 @@ document.querySelector('#resetear3').onclick = function(event) {
       $form1['anio-nacimiento'].className = " ";
     }
 
-    const $form1 = document.querySelector('#formulario1');
-    $form1.onsubmit = validarFormulario1;
+    //const $form1 = document.querySelector('#formulario1');
+    //$form1.onsubmit = validarFormulario1;
 
   }
 
 
   function validarAnioActual(anioActual){
-    if (anioActual<=0){
-      return "Año Actual debe ser mayor que cero"
+   if (anioActual<=0){
+      return "Año Actual debe ser mayor que cero";
 
-    }
+    };
+
     if (anioActual > 2020){
-      return "Año Actual debe ser menor a 2020"
-    }
+      return "Año Actual debe ser menor a 2020";
+    };
   }
 
   function validarAnioNacimiento(anioNacimiento){
     if (anioNacimiento<=0){
-      return "Año Actual debe ser mayor que cero"
+      return "Año Actual debe ser mayor que cero";
+    };
 
-    }
     if (anioNacimiento > 2020){
-      return "Año Actual debe ser menor a 2020"
-    }
-  }
+      return "Año Actual debe ser menor a 2020";
+    };
+  };
+
+
+  const $form1 = document.querySelector('#formulario1');
+  $form1.onsubmit = validarFormulario1;
